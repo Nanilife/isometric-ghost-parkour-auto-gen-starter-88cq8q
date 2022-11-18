@@ -49,7 +49,9 @@ function setup() {
     const row: Tile[] = [];
     level.push(row);
     for (let x = 0; x < SIDE_LENGTH; x++) {
-      {
+      if (x === 0 && y === 0) {
+        row.push(new Tile(TileFrame.Green, DecorationFrame.None));
+      } else {
         let tileName = getRandomTileName();
         const randFrame = TileFrame[tileName];
 
