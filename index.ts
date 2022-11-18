@@ -49,7 +49,7 @@ function setup() {
     const row: Tile[] = [];
     level.push(row);
     for (let x = 0; x < SIDE_LENGTH; x++) {
-      let tileName = 'Greensunken';//getRandomTileName();
+      let tileName = getRandomTileName();
       const randFrame = TileFrame[tileName];
 
       let decoFrame = DecorationFrame.None;
