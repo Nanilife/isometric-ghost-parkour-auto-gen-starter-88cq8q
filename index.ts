@@ -49,16 +49,18 @@ function setup() {
     const row: Tile[] = [];
     level.push(row);
     for (let x = 0; x < SIDE_LENGTH; x++) {
-      let tileName = getRandomTileName();
-      const randFrame = TileFrame[tileName];
+      {
+        let tileName = getRandomTileName();
+        const randFrame = TileFrame[tileName];
 
-      let decoFrame = DecorationFrame.None;
-      if (tileName.endsWith('Sunken')) {
-        decoFrame = getRandomValueDecoration();
-      } else if (tileName.startsWith('Green')) {
-        decoFrame = getRandomDecoration();
+        let decoFrame = DecorationFrame.None;
+        if (tileName.endsWith('Sunken')) {
+          decoFrame = getRandomValueDecoration();
+        } else if (tileName.startsWith('Green')) {
+          decoFrame = getRandomDecoration();
+        }
+        row.push(new Tile(randFrame, decoFrame));
       }
-      row.push(new Tile(randFrame, decoFrame));
     }
   }
 
