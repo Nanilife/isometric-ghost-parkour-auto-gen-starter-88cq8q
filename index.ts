@@ -51,6 +51,8 @@ function setup() {
     for (let x = 0; x < SIDE_LENGTH; x++) {
       if (x === 0 && y === 0) {
         row.push(new Tile(TileFrame.Green, DecorationFrame.None));
+      } else if (x === 0){
+        row.push(new Tile(TileFrame.Green, DecorationFrame.Tree));
       } else {
         let tileName = getRandomTileName();
         const randFrame = TileFrame[tileName];
